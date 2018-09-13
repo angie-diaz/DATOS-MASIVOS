@@ -1,0 +1,66 @@
+
+ //1. par o no es par-------------------------------
+
+for(num <- Range(0,10)){
+if(num%2 == 0){
+println(s"$num  par")
+}else{ println(s"$num  no es par")}}
+
+//2.funcion que devuelva true o false----------------------
+
+def primo(num:Int): Boolean={
+for(n<-Range(2,num)){
+if(num%n == 0){
+return false
+}}
+return true
+}
+
+val list = List(1,4,5,9,10,11,15)
+var a = 0
+for(a <- list){
+  if (a <= a) {
+    print("num " + a + " es: ")
+    println(primo(a))
+  }
+}
+
+//3. siete afortunado----------------
+
+println("Afortunado")
+val premiado = List(7,7)
+
+def afortunado (premiado: List[Int]): Int={
+  var sumar = 0
+  for (n<-premiado){
+    if(n == 7){
+      sumar += n*2
+    }else {
+      sumar += n
+    }
+    }
+  return sumar}
+println(afortunado(premiado))
+
+//4.equilibrar--------------------------------------------
+println("4 - Bal")
+val list = List(7,3,4)
+def list2 (balance: List[Int]): Boolean={
+  val (a,b) = balance.splitAt(balance.length/2)
+  if (a.sum == b.sum){
+  return true }
+  else return false
+}
+println(list2(list))
+
+
+//5---------------------------------------
+def palindromo(lectura:String):Boolean={
+    return (lectura==lectura.reverse)
+  }
+
+  var lectura = "angelica"
+  print("lectura")
+
+  var lectura="111"
+  print("lectura")
