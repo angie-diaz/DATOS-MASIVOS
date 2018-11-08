@@ -1,4 +1,5 @@
 
+/////////////////////////////////////////////
 //// LINEAR REGRESSION EXERCISE ///////////
 /// Coplete las tareas comentadas ///
 /////////////////////////////////////////
@@ -81,7 +82,5 @@ val trainingSummary = lrModel.summary
 // Muestre los valores de residuals, el RMSE, el MSE, y tambien el R^2 .
 trainingSummary.residuals.show()
 trainingSummary.predictions.show()
-trainingSummary.r2 //variaza que hay
+trainingSummary.r2 //variaza 
 trainingSummary.rootMeanSquaredError
-
-//listo
