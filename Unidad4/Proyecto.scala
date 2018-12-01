@@ -4,7 +4,6 @@
 //- K-means
 //- Bisecting K-means
 //- Con el dataset iris
-
 //Las importaciones pertinentes para la visualizacion de los datos y manipulacion
 import org.apache.spark.sql.SparkSession
 import org.apache.log4j._
@@ -56,7 +55,6 @@ val model = bkm.fit(output)
 
 val cost = model.computeCost(output)
 println(s"Within Set Sum of Squared Errors = $cost")
-
 
 println("Cluster Centers: ")
 val centers = model.clusterCenters
