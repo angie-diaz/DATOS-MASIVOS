@@ -28,7 +28,7 @@ import org.apache.spark.ml.linalg.Vectors
 data.columns
 
 //Se toman los datos de entrenamiento
-val features_data = (data.select($"Region",$"Fresh", $"Milk", $"Grocery", $"Frozen", $"Detergents_Paper", $"Delicassen"))
+val features_data = (data.select($"Fresh", $"Milk", $"Grocery", $"Frozen", $"Detergents_Paper", $"Delicassen"))
 
 //// Creamos un nuevo objecto VectorAssembler llamado assembler para los feature
 val assembler = (new VectorAssembler().setInputCols(Array("Fresh","Milk", "Grocery","Frozen","Detergents_Paper","Delicassen")).setOutputCol("features"))
@@ -38,7 +38,6 @@ val kmeans = new KMeans().setK(3).setSeed(1L)
 
 val df = assembler.transform(features_data).select($"features")
 val model = kmeans.fit(df)
-
 
 // Evaluate clustering by calculate Within Set Sum of Squared Errors.
 val WSSE = model.computeCost(df)
